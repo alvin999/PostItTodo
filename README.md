@@ -39,18 +39,18 @@
 
 ## 🚀 快速開始
 
-### 方式 1: 使用 Docker (推薦)
-# 1. Clone 專案
+## 方式 1: 使用 Docker (推薦)
+### 1. Clone 專案
 git clone https://github.com/你的帳號/todo-app.git
 cd todo-app
 
-# 2. 啟動服務
+### 2. 啟動服務
 docker-compose up -d
 
-# 3. 訪問應用
+### 3. 訪問應用
 open http://localhost:8000
 
-### 方式 2: 線上 Demo (最佳體驗)
+## 方式 2: 線上 Demo (最佳體驗)
 
 部署到免費平台:
 
