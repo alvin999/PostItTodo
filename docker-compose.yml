@@ -1,0 +1,31 @@
+services:
+  todo-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: todo-app
+    ports:
+      - "8000:8000"
+    
+    # 🔥 重要:確保 Volume 掛載正確
+    volumes:
+      - todo-data:/app/backend/data  # 使用命名 Volume
+      # 或使用綁定掛載:
+      # - ./backend/data:/app/backend/data
+    
+    environment:
+      - DOCKER_ENV=true
+      - PYTHONUNBUFFERED=1
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+# 🔥 重要:定義持久化 Volume
+volumes:
+  todo-data:
+    driver: local
