@@ -26,6 +26,7 @@ services:
       retries: 3
 
 # 🔥 重要:定義持久化 Volume
+# 👇 必須在檔案底部定義命名 Volume 區塊
 volumes:
   todo-data:
     driver: local
